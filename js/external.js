@@ -33,12 +33,12 @@ alert("Your paycheck will be: " + paycheck + " for the weeK ");
 let roomSchedule = confirm("What availability do you have ");
 console.log(roomSchedule)
 let classRoom = !confirm("How many spots are left in class?");
-console.log(classRoom)confirm("Can you take this course?");
+console.log(classRoom);confirm("Can you take this course?");
 console.log(roomSchedule);
 alert("You can register if: " + (classRoom && roomSchedule));
 alert("Congrats: " + (confirm("There is space at the cohort and availability")));
 //3.4
 let areMember = confirm("Are you a club member?");
 let itemsCart = parseFloat(prompt("How many items in your cart?"));
-let offerValid = confirm("is the offer valid?");
+let offerValid = confirm("Is the offer valid?");
 alert("Customer has discount: " + (offerValid && areMember || itemsCart > 2 ));
