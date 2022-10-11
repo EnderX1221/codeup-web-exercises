@@ -90,6 +90,10 @@
      * prompt the user for the bill total and a percentage they would like to tip,
      * then display the dollar amount they should tip
      */
+    let userTotal = parseFloat(prompt("Hey what was your total at Chili's today?"));
+    let userTip = parseFloat(prompt("What percentage would you like to tip?"))/100;
+
+    alert("You'll add $" + calculateTip(userTip, userTotal).toFixed(2) + " to your bill today.");
 
     /**
      * TODO:
