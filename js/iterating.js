@@ -6,30 +6,37 @@
      * Create an array of 4 people's names and store it in a variable called
      * 'names'.
      */
-
+let names = ["Jorge", "Pedro", "Pablo", "Luis"];
     /**
      * TODO:
      * Create a log statement that will log the number of elements in the names
      * array.
      */
-
+console.log(names.length);
     /**
      * TODO:
      * Create log statements that will print each of the names individually by
      * accessing each element's index.
      */
-
+console.log(names[0]);
+console.log(names[1]);
+console.log(names[2]);
+console.log(names[3]);
     /**
      * TODO:
      * Write some code that uses a for loop to log every item in the names
      * array.
      */
-
+for(let i = names.length -1; i > 3; i--) {
+    console.log("One of the names is:" + names[i]);
+}
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
-
+    names.forEach(function (name) {
+        console.log("One of the names is: " + name)
+    });
     /**
      * TODO:
      * Create the following three functions, each will accept an array and
@@ -43,5 +50,17 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
+function first(arr) {
+return arr[0];
+    }
+    function second(arr){
+        return arr[1];
+    }
+    function last(arr){
+        return arr[arr.length -1];
+    }
+    console.log(first(name));
+    console.log(second(name));
+    console.log(last(name));
 
 })();
