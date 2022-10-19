@@ -11,7 +11,11 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-
+    let person = {};
+    person.firstName = "Javier";
+    person.lastName = "Razo";
+    console.log(person.firstName)
+    console.log(person.lastName)
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -21,7 +25,10 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+    person.sayHello = function(){
 
+    }
+    console.log(person.sayHello("Hello from Javier Razo!"))
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
