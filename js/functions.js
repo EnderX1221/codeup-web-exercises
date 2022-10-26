@@ -117,4 +117,4 @@
 
     console.log(applyDiscount(100, .2));
     console.log(applyDiscount(45.99, 0.12))
-} ) ()
+}) ();
