@@ -22,18 +22,18 @@
  * console.logging the function's return value
  */
 
-function analyzeColor(parameter) {
-    if ("blue" == parameter) {
-        return "blue is the color fo the sky";
-    } else if ("red" == parameter) {
-        return "Strawberries are red";
-    } else {return "I don't anything about " + parameter};
-
-}
-console.log(analyzeColor("blue"));
-console.log(analyzeColor("red"));
-console.log(analyzeColor("cyan"));
-
+ // function analyzeColor(parameter) {
+ //    if ("blue" == parameter) {
+ //        return "blue is the color fo the sky";
+ //     } else if ("red" == parameter) {
+    //     return "Strawberries are red";
+    // } else {return "I don't anything about " + parameter};
+//
+//}
+// console.log(analyzeColor("blue"));
+// console.log(analyzeColor("red"));
+// console.log(analyzeColor("cyan"));
+//
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -47,21 +47,21 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-console.log(analyzeColor(randomColor));
+//console.log(analyzeColor(randomColor));
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
 function analyzeColor(parameter){
 
-    switch (parameter){
-        case "blue";
-        return "blue is the color of the sky";
-        case "red";
-        return "Strawberries are red";
-        dafault;
-        return "I dont know anything about" + parameter;
-
+    switch (parameter) {
+        case "blue":
+            return "blue is the color of the sky";
+        case "red":
+            return "Strawberries are red";
+        default:
+            return "I dont know anything about" + parameter;
+    }
     }
 /**
  * TODO:
@@ -97,7 +97,7 @@ function calculateTotal(luckyNumber, total) {
     let discountPrice;
     if (luckyNumber === 0) {
         discountPrice = total;
-    }else if(luckyNumber ==== 1) {
+    }else if(luckyNumber === 1) {
         discountPrice = total - (total * .1);
     }else if(luckyNumber === 2){
         discountPrice = total - (total * .25);
@@ -109,8 +109,13 @@ function calculateTotal(luckyNumber, total) {
         discountPrice = 0;
     }
     return discountPrice;
-}
-console.log(calculateTotal(0,100));
+
+//console.log(calculateTotal(0,100));
+//console.log(calculateTotal(1,100));
+//console.log(calculateTotal(2,100));
+//console.log(calculateTotal(3,100));
+//console.log(calculateTotal(4,100));
+//console.log(calculateTotal(5,100));
 /**
  * TODO: 6
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -120,12 +125,12 @@ console.log(calculateTotal(0,100));
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
- let luckyNumber = Math.floor(Math.random() * 6);
-let userInput = prompt("What is your total bill?");
-
-calculateTotal(luckyNumber, userInput);
-
-alert("Your lucky number is " + luckyNumber + "Your price before discount is " + userInput + "Price with discount is " + calculateTotal(luckyNumber, userInput) + ".");
+//  let luckyNumber = Math.floor(Math.random() * 6);
+// let userInput = prompt("What is your total bill?");
+//
+// calculateTotal(luckyNumber, userInput);
+//
+// alert("Your lucky number is " + luckyNumber + "Your price before discount is " + userInput + "Price with discount is " + calculateTotal(luckyNumber, userInput) + ".");
 
 
 /**
@@ -147,19 +152,62 @@ alert("Your lucky number is " + luckyNumber + "Your price before discount is " +
  * HINT: The way we prompt for a value could be improved
  */
 
-if(confirm("Would you like to enter a number?")){
-    let userInput2 = parseInt(prompt("Please enter a number");
+// if(confirm("Would you like to enter a number?")){
+//     let userInput2 = parseInt(prompt("Please enter a number"));
+//
+//     if(userInput2 % 2 === 0){
+//         alert(userInput2 + "is even.");
+//     }else {
+//         alert(userInput2 + "is odd.");
+//     }
+//     alert("Your number + 100 = " + userInput2 + 100));
+//
+//     if(userInput2 >= 0){
+//         alert("Your number is positive");
+//     }else {
+//         alert("Your number is negative");
+//     }
+// } else {
+//     alert("You did not enter a number. Please enter a number, next time. You entered not a number.");
+// }
+}
 
-    if(userInput2 % 2 === 0){
-        alert(userInput2 + "is even");
-    }else {
-        alert(userInput2 + "is odd");
-    }
-    alert("Your number + 100 = " + userInput2 + 100);
+function promptUserNumber(){
+    if(confirm("Would you like to enter a number?")){
+        let userInput = parseInt(prompt("Please enter a number."));
 
-    if(userInput2 >= 0){
-        alert("Your number is positive");
-    }else {
-        alert("Your number is negative");
+        if(!isNaN(userInput)){
+            alert(isEven(userInput));
+            alert(inputPlus100(userInput))
+            alert(isPositive(userInput))
+        } else {
+            alert("You did not enter a number. Please enter a number, next time. You entered not a number.");
+        }
     }
 }
+function isEven(userInput){
+    if (userInput % 2 === 0){
+        return userInput + " is even.";
+    } else {
+        return userInput + " is odd.";
+    }
+}
+
+function inputPlus100(userInput){
+
+    return "Your number + 100 = " + (userInput + 100);
+
+}
+
+function isPositive(userInput){
+    if (userInput >= 0) {
+        return "Your number is positive.";
+    } else {
+        return "Your number is negative.";
+    }
+}
+
+
+
+
+promptUserNumber();
