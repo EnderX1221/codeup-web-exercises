@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Forms</title>
+    <title>Register With Us</title>
 </head>
 <body>
-<form method="GET" action="https://request-inspector.glitch.me/">
+<form method="POST" action="https://request-inspector.glitch.me/">
 
     <label for="username">Username</label>
     <input id="username" name="username" type="text">
@@ -17,51 +17,43 @@
 
     <input type="submit">
 </form>
-
+<h2>Bio</h2>
 <form action="https://request-inspector.glitch.me" method="POST">
-    <label for="zipcode">Zipcode</label>
-    <input type="text" name="zipcode" id="zipcode" placeholder="input a zipcode">
-
-    <textarea name="comment"></textarea>
-    <br>
-    <input name="newsletter_signup" value="true" type="checkbox" checked>Sign Up For The Email Newsletter
-    <br>
-    A <input type="radio" name="quiz_question_1" value="a"><br>
-    B <input type="radio" name="quiz_question_1" value="b"><br>
-    C <input type="radio" name="quiz_question_1" value="c"><br>
-    D <input type="radio" name="quiz_question_1" value="d"><br>
-
-    <select name="coffee_preference">
-        <option value="light">Light Roast</option>
-        <option value="dark">Dark Roast</option>
-        <option value="espresso">Espresso Blend</option>
-    </select>
-    <input type="hidden" name="user_id" value="432">
-    <br>
-
-    <input type="text" name="username" value="codeup" disabled>
-
-    <select name="newsletter_signup">
-        <option disabled value="n">No</option>
-        <option selected value="y">Yes</option>
-    </select>
-
-    <h2>What kind of phone do you own?</h2>
-    <label for="android">
-        Android <input id="android" type="checkbox" name="phones" value="android">
+    <div>
+        <label for="subject">Name</label>
+        <input id="subject" name="subject"type="text">
+    </div>
+    <div>
+        <label for="body">Bio</label>
+        <textarea id="body" name="body" rows="5" cols="40"></textarea>
+    </div>
+    <div>
+        <button type="submit">Send</button>
+    </div>
+</form>
+<h2>How did you hear about us?</h2>
+<form action="https://request-inspector.glitch.me" method="POST">
+    <label>
+        <input type="radio" name="q1" value="billboard">Billboard
     </label>
-    <label for="ios">
-        iOS <input id="ios" type="checkbox" name="phones" value="ios">
+    <label>
+        <input type="radio" name="q1" value="radio advertisement">Radio Advertisement
     </label>
-    <label for="windows">
-        Windows <input id="windows" type="checkbox" name="phones" value="windows">
+    <label>
+        <input type="radio" name="q2" value="internet advertisement">Internet Advertisement
     </label>
-    <label for="other">
-        Other <input id="other" type="checkbox" name="phones" value="other">
+    <label>
+        <input type="radio" name="q2" value="other">Other
     </label>
-
-
-    <button type="submit">Search</button>
+    <div>
+        <label for="os">What operating system are you using?</label>
+        <select id="os" name="os[]" multiple>
+            <option value="linux">Linux</option>
+            <option value="osx">OS X</option>
+            <option value="windows">Windows</option>
+        </select>
+    </div>
+    <input type="submit">
 </form>
 
 </body>
