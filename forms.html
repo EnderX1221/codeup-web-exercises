@@ -1,83 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>My First HTML Form</title>
+    <meta charset="UTF-8">
+    <title>Forms</title>
 </head>
 <body>
-<h2>Login</h2>
-<form method="POST" action="http://request-inspector.glitch.me/">
-    <div>
-        <label for="username">Username</label>
-        <input id="username" name="username" type="text" placeholder="Enter username here.">
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input id="password" name="password" type="password" placeholder="Enter password here.">
-    </div>
-    <div>
-        <button type="submit">Login</button>
-    </div>
+<form method="GET" action="https://request-inspector.glitch.me/">
+
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text">
+    <br>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password">
+    <br>
+
+    <input type="submit">
 </form>
-<h2>Compose an Email</h2>
-<form method="POST" action="http://request-inspector.glitch.me/">
-    <div>
-        <label for="subject">Subject</label>
-        <input id="subject" name="subject"type="text">
-    </div>
-    <div>
-        <label for="body">Body</label>
-        <textarea id="body" name="body" rows="5" cols="40"></textarea>
-    </div>
-    <div>
-        <button type="submit">Send</button>
-    </div>
-    <div>
-        <input type="checkbox" id="mailing_list" name="mailing_list" value="yes" checked>
-        <label for="mailing_list">Sign me up for the mailing list!</label>
-    </div>
-    <h2>Multiple Choice Test</h2>
-    <form method="post" action="http://request-inspector.glitch.me/">
-        <div>Who is the best Superhero?</div>
-        <label>
-            <input type="radio" name="q1" value="batman">Batman
-        </label>
-        <label>
-            <input type="radio" name="q1" value="superman">Superman
-        </label>
-        <div>What's the best food?</div>
-        <label>
-            <input type="radio" name="q2" value="pizza">Pizza
-        </label>
-        <label>
-            <input type="radio" name="q2" value="pasta">Pasta
-        </label>
-        <div>Who has the best fast food?</div>
-        <label>
-            <input type="checkbox" id="os1" name="os[]" value="popeyes">Popeyes
-        </label>
-        <label>
-            <input type="checkbox" id="os2" name="os[]" value="kfc">KFC
-        </label>
-        <div>
-            <label for="os">What is the best operating system?</label>
-            <select id="os" name="os[]" multiple>
-                <option value="linux">Linux</option>
-                <option value="osx">OS X</option>
-                <option value="windows">Windows</option>
-            </select>
-        </div>
-        <div>
-            <button type="submit">Submit</button>
-        </div>
-        <h2>Select Testing</h2>
-        <form method="POST" action="http://request-inspector.glitch.me/">
-            <div>
-                <p>Do you like food?</p>
-                <label for="transmission">Select your transmition type: </label>
-                <select id="transmission" name="transmission"><option value="1">Yes</option><option value="0">No</option></select>
-                <button type="submit">Submit</button>
-            </div>
-        </form>
+
+<form action="https://request-inspector.glitch.me" method="POST">
+    <label for="zipcode">Zipcode</label>
+    <input type="text" name="zipcode" id="zipcode" placeholder="input a zipcode">
+
+    <textarea name="comment"></textarea>
+    <br>
+    <input name="newsletter_signup" value="true" type="checkbox" checked>Sign Up For The Email Newsletter
+    <br>
+    A <input type="radio" name="quiz_question_1" value="a"><br>
+    B <input type="radio" name="quiz_question_1" value="b"><br>
+    C <input type="radio" name="quiz_question_1" value="c"><br>
+    D <input type="radio" name="quiz_question_1" value="d"><br>
+
+    <select name="coffee_preference">
+        <option value="light">Light Roast</option>
+        <option value="dark">Dark Roast</option>
+        <option value="espresso">Espresso Blend</option>
+    </select>
+    <input type="hidden" name="user_id" value="432">
+    <br>
+
+    <input type="text" name="username" value="codeup" disabled>
+
+    <select name="newsletter_signup">
+        <option disabled value="n">No</option>
+        <option selected value="y">Yes</option>
+    </select>
+
+    <h2>What kind of phone do you own?</h2>
+    <label for="android">
+        Android <input id="android" type="checkbox" name="phones" value="android">
+    </label>
+    <label for="ios">
+        iOS <input id="ios" type="checkbox" name="phones" value="ios">
+    </label>
+    <label for="windows">
+        Windows <input id="windows" type="checkbox" name="phones" value="windows">
+    </label>
+    <label for="other">
+        Other <input id="other" type="checkbox" name="phones" value="other">
+    </label>
+
+
+    <button type="submit">Search</button>
+</form>
+
 </body>
 </html>
