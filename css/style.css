@@ -2,6 +2,31 @@
     color: purple;
     text-decoration: underline;
 }
-/*h1 {*/
-/*    text-align: center;*/
-/*}*/
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headers {
+   text-decoration: underline;
+    text-decoration-color: cadetblue;
+    color: darkred;
+}
+body {
+    background-color: burlywood;
+    font-family: Arial, Geneva, Helvetica, sans-serif;
+}
+table {
+    background-image: url("/imgs/picd.jpg");
+    display: flex;
+    background-color: lightgray;
+    list-style-type: none;
+    flex-wrap: wrap;
+    margin: 1.25em 0em;
+    padding: 1.25em;
+    width: 75%;
+    justify-content: center;
+}
+
+
