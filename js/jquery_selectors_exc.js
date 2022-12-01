@@ -1,7 +1,8 @@
 "use strict";
 
 $(function() {
-    alert( 'The DOM has finished loading!' );
-
+    $('#front');
+    var contents = $('#front').html();
+    alert(contents);
 
 });
