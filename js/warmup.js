@@ -74,4 +74,3 @@ function getTallestHamster(arr){
 }
 console.log(getTallestHamster(hamsters));
 
-

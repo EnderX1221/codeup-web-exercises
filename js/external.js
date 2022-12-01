@@ -27,6 +27,8 @@ let gHours=6,
     aHours=4,
     fbHours=10;
 
+
+
 let paycheck=(google*gHours)+ (amazon*aHours) + (facebook*fbHours);
 alert("Your paycheck will be: " + paycheck + " for the weeK ");
 //3.3
