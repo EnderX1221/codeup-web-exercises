@@ -34,5 +34,35 @@ var marker = new mapboxgl.Marker({
 })
     .setLngLat([-98.600340,29.591680])
     .addTo(map);
+var accessToken = YOUR_ACCESS_TOKEN_HERE;
+
+mapboxgl.accessToken = accessToken;
+
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    zoom: 10,
+    center: [-98.4916, 29.4252]
+});
+
+var alamoInfo = {
+    address: "The Alamo",
+    popupHTML: "<p>Remember the Alamo!</p>"
+};
+
+function placeMarkerAndPopup(info, token, map) {
+    geocode(info.address, token).then(function(coordinates) {
+        var popup = new mapboxgl.Popup()
+            .setHTML(info.popupHTML);
+        var marker = new mapboxgl.Marker()
+            .setLngLat(coordinates)
+            .addTo(map)
+            .setPopup(popup);
+        popup.addTo(map);
+    });
+}
+
+placeMarkerAndPopup(alamoInfo, accessToken, map);
+
 
 
