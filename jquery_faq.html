@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Methods Exercise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <style type="text/css">
+    #newsletter {
+      color: gray;
+      border: 3px solid white;
+    }
+
+    #halfHeader {
+      text-align: center;
+    }
+
+    .invisible {
+      display: none;
+    }
+
+    body {
+      background-color: floralwhite;
+    }
+
+    dt {
+      text-decoration: underline;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-weight: 900;
+    }
+
+    .frame {
+      border: 10px solid yellow;
+      height: 250px;
+    }
+
+    .picture1 {
+
+      background-size: cover;
+    }
+
+    .picture2 {
+
+      background-size: cover;
+    }
+
+    .picture3 {
+
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+<main id="halfHeader">
+  <div>
+    <h1><i id="newsletter">Welcome to the Parks</i><span><sup>X</sup></span></h1>
+
+
+    <h1><b>Top Ten FAQ's about National Park Service!!!</b></h1>
+
+    <h3>Garner State Park</h3>
+    <ul>
+      <li>Two German immigrant families, the Magers and the Streibs, settled on land that later became Garner
+        State Park.
+      </li>
+      <li>The Magers family, German immigrants who settled in this area, opened part of their land for camping
+        in
+        the 1920s.
+      </li>
+      <li>For thousands of years, the Frio River has enticed people to its banks. Between 10,000 and 12,000
+        years
+        ago.
+      </li>
+      <li>Prehistoric people camped in the area which came for the abundant game, useful plants and stone for
+        making tools.
+      </li>
+    </ul>
+
+    <h3>McKinney Falls State Park</h3>
+    <ul>
+      <li>Humans began occupying this area about 8,750 years ago.</li>
+      <li>The park officially opened to the public in 1976. Enjoy fishing, hiking, swimming, camping and more
+        when
+        you visit the park today.
+      </li>
+      <li>Traders used the routes of McKinney for commerce.</li>
+      <li>Some traders may have become part of modern tribes in Texas, such as the Tonkawa.</li>
+    </ul>
+
+    <h3>Lost Maples State Natural Area</h3>
+    <ul>
+      <li>The land for Lost Maples State Natural Area was acquired by the state of Texas in 1973 and 1974, and
+        was
+        opened to the public in 1979.
+      </li>
+      <li>Much of the area's limestone bedrock is exposed on elevated terrain, which has a shallow,
+        discontinuous
+        cover of dark gray stony clay (Eckrant series).
+      </li>
+      <li>The 2,906-acre reserve contains 11 miles of hiking trails, 30 campsites, and eight primitive camping
+        areas.
+      </li>
+      <li>Geology - Despite a high clay content in most cases, poorly drained soils are too inextensive to be
+        mapped.
+      </li>
+    </ul>
+
+    <!--Button to highlight last li in UL-->
+    <button id="highlightBtn">Highlight the last li</button>
+  </div>
+
+  <div>
+    <br>
+    <button id="toggleAnswersBtn">Toggle Answers</button>
+    <dl>
+      <dt>Who is the director of the The National Park Service?</dt>
+      <dd class="invisible"><img src="images/will-farrell.jpg">
+      </dd>
+    </dl>
+  </div>
+
+  <!-- Bonus -->
+  <div class="row">
+    <!--Using Bootstrap-->
+    <div class="col-md-4">
+      <div class="frame picture1"></div>
+      <button id="leftSwapBtn" class="pictureBtn btn btn-success center-block">Swap</button>
+    </div>
+    <div class="col-md-4">
+      <div class="frame picture2"></div>
+      <button id="middleSwapBtn" class="pictureBtn btn btn-success center-block">Swap</button>
+    </div>
+    <div class="col-md-4">
+      <div class="frame picture3"></div>
+      <button id="rightSwapBtn" class="pictureBtn btn btn-success center-block">Swap</button>
+    </div>
+  </div>
+
+</main>
+
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+  // Traversal exercise
+  $(document).ready(function () {
+    "use strict";
+
+
+    var highLightBtn = $('#highlightBtn');
+    highLightBtn.click(function () {
+
+      $('ul').each(function (index, element) {
+        $(element).children().last().css("background-color", "yellow");
+      });
+    });
+
+    $("dt").click(function () {
+      $(this).css("background-color", "yellow");
+    });
+
+
+    // Make the ul li's bold when clicking the corresponding h3
+
+    $('h3').click(function () {
+      $(this).next().children().css("font-weight", "bold");
+    });
+
+
+    // Make the first li turn blue when clicking an li in a given ul
+    //Making the the first li blue by 'click'ing the 'li'
+    $('li').click(function () {
+      $(this).parent().children().first().css("color", "blue");
+    });
+
+
+    $('#leftSwapBtn').click(function () {
+      var oldClass = $(this).prev().attr("class").split(" ")[1];
+      var newClass = $(this).parent().next().children().first().attr("class").split(" ")[1];
+      $(this).prev().attr("class", "frame " + newClass);
+      $(this).parent().next().children().first().attr("class", "frame " + oldClass)
+    });
+
+    $('#middleSwapBtn').click(function () {
+      var choice = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+      var frameChoice = (choice) ? $(this).parent().prev() : $(this).parent().next();
+      var oldClass = $(this).prev().attr("class").split(" ")[1];
+      var newClass = frameChoice.children().first().attr("class").split(" ")[1];
+      $(this).prev().attr("class", "frame " + newClass);
+      frameChoice.children().first().attr("class", "frame " + oldClass)
+    });
+
+    $('#rightSwapBtn').click(function () {
+      var oldClass = $(this).prev().attr("class").split(" ")[1];
+      var newClass = $(this).parent().prev().children().first().attr("class").split(" ")[1];
+      $(this).prev().attr("class", "frame " + newClass);
+      $(this).parent().prev().children().first().attr("class", "frame " + oldClass)
+    });
+
+
+    //dt/dd
+    $('#toggleAnswersBtn').click(function (e) {
+      $("dd").toggleClass("invisible");
+    });
+
+
+
+    $("span").click(function () {
+      $(this).parent().hide();
+    });
+
+    $("ul").hide();
+    $("h3").click(function () {
+      $(this).next().slideToggle();
+    });
+
+
+    $("#register").hide().delay(5000).fadeIn();
+
+
+
+
+
+
+  });
+
+</script>
+
+</body>
+</html>
